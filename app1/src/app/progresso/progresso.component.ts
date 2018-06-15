@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-progresso',
-  templateUrl: './progresso.component.html',
-  styleUrls: ['./progresso.component.css']
+    selector: 'app-progresso',
+    templateUrl: './progresso.component.html',
+    styleUrls: ['./progresso.component.css']
 })
 export class ProgressoComponent implements OnInit {
 
-  constructor() { }
+    public progresso: number = 0;
 
-  ngOnInit() {
-  }
+    constructor() { }
 
+    ngOnInit() {
+    }
 }
