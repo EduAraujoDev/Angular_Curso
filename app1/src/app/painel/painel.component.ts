@@ -20,6 +20,8 @@ export class PainelComponent implements OnInit {
 
     public progresso: number = 0;
 
+    public tentativas: number = 3;
+
     constructor() {
         this.atualizaRodada();
     }
@@ -33,17 +35,18 @@ export class PainelComponent implements OnInit {
     }
 
     public verificarResposta(): void {
-
         if (this.rodadaFrase.frasePtBr == this.resposta) {
             this.rodada++;
            
             this.atualizaRodada();
 
             this.progresso += (100 / this.frases.length);
-
-            alert('A tradução está correta!');
         } else {
-            alert('A frase está errada!');
+            this.tentativas--;
+
+            if (this.tentativas === -1) {
+                alert('Você perdeu todas as tentativas');
+            }
         }
     }
 
