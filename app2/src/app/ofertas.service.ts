@@ -58,8 +58,8 @@ export class OfertasService {
     }
 
     public getOferta2(): Promise<Array<Oferta>> {
-        return new Promise(() => {(resolve, reject) => {
+        return new Promise((resolve, reject) => {
             resolve(this.ofertas);
-        }})
+        })
     }
 }
