@@ -18,6 +18,6 @@ export class RestaurantesComponent implements OnInit {
         this.ofertasServices.getOfertasPorCategoria('restaurante')
             .then((ofertas: Oferta[]) => {
                 this.ofertas = ofertas;
-            })
+        })
     }
 }
