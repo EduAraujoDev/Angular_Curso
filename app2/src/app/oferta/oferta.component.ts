@@ -20,6 +20,12 @@ export class OfertaComponent implements OnInit {
 		this.ofertasServices.getOfertaPotId(this.route.snapshot.params['id'])
 			.then(( oferta: Oferta) => {
 				this.oferta = oferta;
-			});
+            });
+            
+        this.route.params.subscribe(
+            (parametro: any) => { console.log(parametro) },
+            (erro: any) => console.log(erro),
+            () => console.log('Deu certo!')    
+        );
 	}
 }
