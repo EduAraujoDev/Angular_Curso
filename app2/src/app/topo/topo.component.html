@@ -8,7 +8,7 @@
                     </a>
                 </div>
                 <div class="col-md-6">
-                    <input type="text" class="form-control" placeholder="Pesquise por orfertas..." (keyup)="pesquisa($event)" />
+                    <input type="text" class="form-control" placeholder="Pesquise por orfertas..." #termoDaPesquisa (keyup)="pesquisa(termoDaPesquisa.value)" />
                 </div>
                 <div class="col-md-2">
                     <a a href="#">
