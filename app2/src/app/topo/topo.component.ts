@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OfertasService } from '../ofertas.service';
 import { Observable, Subject, of } from 'rxjs';
 import { Oferta } from '../shared/oferta.model';
-import { switchMap, debounceTime } from 'rxjs/operators';
+import { switchMap, debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 @Component({
     selector: 'app-topo',
@@ -21,6 +21,7 @@ export class TopoComponent implements OnInit {
     ngOnInit() {
         this.ofertas = this.subjectPesquisa
             .pipe(debounceTime(1000))
+            .pipe(distinctUntilChanged())
             .pipe(switchMap((termoDaBusca: string) => {
 
                 if (termoDaBusca.trim() === '') {
