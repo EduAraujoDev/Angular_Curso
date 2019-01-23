@@ -13,6 +13,7 @@ import { switchMap, debounceTime, distinctUntilChanged, catchError } from 'rxjs/
 export class TopoComponent implements OnInit {
 
     public ofertas: Observable<Oferta[]>;
+    public ofertas2: Oferta[];
 
     private subjectPesquisa: Subject<String> = new Subject<string>();
 
@@ -34,8 +35,11 @@ export class TopoComponent implements OnInit {
                 console.log(err);
                 return of<Oferta[]>([])
             }))
-        
-        this.ofertas.subscribe((ofertas: Oferta[]) => console.log(ofertas));
+
+        this.ofertas.subscribe((ofertas: Oferta[]) => {
+            this.ofertas2 = ofertas;
+            console.log(ofertas);
+        });
     }
 
     public pesquisa(termoDaBusca: string): void {
