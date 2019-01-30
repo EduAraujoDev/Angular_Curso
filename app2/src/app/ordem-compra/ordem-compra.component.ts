@@ -16,7 +16,12 @@ export class OrdemCompraComponent implements OnInit {
     public enderecoValido: boolean;
     public numeroValido: boolean;
     public complementoValido: boolean;
-    public formaPagamentoValido: boolean; 
+    public formaPagamentoValido: boolean;
+
+    public enderecoEstadoPrimitivo: boolean = true;
+    public numeroEstadoPrimitivo: boolean = true;
+    public complementoEstadoPrimitivo: boolean = true;
+    public formaPagamentoEstadoPrimitivo: boolean = true;
 
     constructor() { }
 
@@ -25,6 +30,8 @@ export class OrdemCompraComponent implements OnInit {
 
     public atualizaEndereco(endereco: string): void {
         this.endereco = endereco;
+
+        this.enderecoEstadoPrimitivo = false;
 
         if (this.endereco.length > 3) {
             this.enderecoValido = true;
@@ -36,6 +43,8 @@ export class OrdemCompraComponent implements OnInit {
     public atualizaNumero(numero: string): void {
         this.numero = numero;
 
+        this.numeroEstadoPrimitivo = false;
+
         if (this.numero.length > 0) {
             this.numeroValido = true;
         } else {
@@ -46,6 +55,8 @@ export class OrdemCompraComponent implements OnInit {
     public atualizaComplemento(complemento: string): void {
         this.complemento = complemento;
 
+        this.complementoEstadoPrimitivo = false;
+
         if (this.complemento.length > 0) {
             this.complementoValido = true;
         } else {
@@ -55,6 +66,8 @@ export class OrdemCompraComponent implements OnInit {
 
     public atualizaFormaPagamento(formaPagamento: string): void {
         this.formaPagamento = formaPagamento;
+
+        this.formaPagamentoEstadoPrimitivo = false;
 
         if (this.formaPagamento.length > 0) {
             this.formaPagamentoValido = true;
