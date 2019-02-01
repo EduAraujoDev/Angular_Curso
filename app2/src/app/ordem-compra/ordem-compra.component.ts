@@ -13,6 +13,8 @@ export class OrdemCompraComponent implements OnInit {
 
     public pedido: Pedido = new Pedido( '', '', '', '');
 
+    public idPedidoCompra: number;
+
     public endereco: string = '';
     public numero: string = '';
     public complemento: string = '';
@@ -105,6 +107,8 @@ export class OrdemCompraComponent implements OnInit {
         this.pedido.formaPagamento = this.formaPagamento;
 
         this.ordemCompraService.efetivarCompra(this.pedido)
-            .subscribe();
+            .subscribe((idPedido: number) => {
+                this.idPedidoCompra = idPedido;
+            });
     }
 }

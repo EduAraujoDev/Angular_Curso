@@ -192,6 +192,48 @@
       "complemento": "teste 2",
       "formaPagamento": "dinheiro",
       "id": 1
+    },
+    {
+      "endereco": "teste 1",
+      "numero": "123",
+      "complemento": "teste2 ",
+      "formaPagamento": "dinheiro",
+      "id": 2
+    },
+    {
+      "endereco": "teste",
+      "numero": "123",
+      "complemento": "12312",
+      "formaPagamento": "debito",
+      "id": 3
+    },
+    {
+      "endereco": "teste",
+      "numero": "123",
+      "complemento": "teste",
+      "formaPagamento": "dinheiro",
+      "id": 4
+    },
+    {
+      "endereco": "teste",
+      "numero": "123",
+      "complemento": "123123",
+      "formaPagamento": "dinheiro",
+      "id": 5
+    },
+    {
+      "endereco": "teste ",
+      "numero": "123123",
+      "complemento": "123123",
+      "formaPagamento": "dinheiro",
+      "id": 6
+    },
+    {
+      "endereco": "teste",
+      "numero": "534534",
+      "complemento": "testeteste",
+      "formaPagamento": "dinheiro",
+      "id": 7
     }
   ]
 }
