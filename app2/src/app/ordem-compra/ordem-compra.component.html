@@ -77,13 +77,17 @@
             <div class="form-row">
 
                 <div class="form-group col-md-6">
-                    <input type="text" name="endereco" class="form-control is-invalid" placeholder="Endereço" autocomplete="off" minlength="5" maxlength="120" required ngModel>
-                    <small class="form-text text-danger">Endereço inválido</small>
+                    <input type="text" name="endereco" class="form-control" placeholder="Endereço" autocomplete="off" minlength="5" maxlength="120" required ngModel #inputEndereco="ngModel">
+                    
+                    <small *ngIf="inputEndereco.valid && inputEndereco.touched" class="form-text text-success">Ok</small>
+                    <small *ngIf="!inputEndereco.valid && inputEndereco.touched" class="form-text text-danger">Endereço inválido</small>
                 </div>
 
                 <div class="form-group col-md-2">
-                    <input type="text" name="numero" class="form-control is-valid" placeholder="Número" autocomplete="off" minlength="1" maxlength="20" required ngModel>
-                    <small class="form-text text-success">Ok</small>
+                    <input type="text" name="numero" class="form-control" placeholder="Número" autocomplete="off" minlength="1" maxlength="20" required ngModel #inputNumero="ngModel">
+
+                    <small *ngIf="inputNumero.valid && inputNumero.touched" class="form-text text-success">Ok</small>
+                    <small *ngIf="!inputNumero.valid && inputNumero.touched" class="form-text text-danger">Endereço inválido</small>
                 </div>
 
                 <div class="form-group col-md-4">
@@ -99,12 +103,14 @@
             <div class="form-row">
 
                 <div class="form-group col-md-3">
-                    <select class="form-control is-invalid" name="formaPagamento" required ngModel>
+                    <select class="form-control" name="formaPagamento" required ngModel #inputFormaPagamento="ngModel">
                         <option value="">Selecione uma opção</option>
                         <option value="dinheiro">Dinheiro</option>
                         <option value="debito">Débito</option>
                     </select>
-                    <small class="form-text text-danger">Forma de pagamento inválida</small>
+
+                    <small *ngIf="inputFormaPagamento.valid && inputFormaPagamento.touched" class="form-text text-success">Ok</small>
+                    <small *ngIf="!inputFormaPagamento.valid && inputFormaPagamento.touched" class="form-text text-danger">Forma de pagamento inválida</small>
                 </div>
             </div>
 
