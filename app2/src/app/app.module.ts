@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { ROUTES } from './app.routes';
 
@@ -43,7 +43,8 @@ registerLocaleData(localePt);
         BrowserModule,
         HttpModule,
         RouterModule,
-        FormsModule,
+        //FormsModule,
+        ReactiveFormsModule,
         RouterModule.forRoot(ROUTES)
     ],
     providers: [
