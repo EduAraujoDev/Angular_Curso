@@ -13,6 +13,8 @@ import { Pedido } from '../shared/pedido.model'
 
 export class OrdemCompraComponent implements OnInit {
 
+    public idPedido: number;
+
     public formulario: FormGroup = new FormGroup({
         'endereco': new FormControl(null, [ Validators.required, Validators.minLength(3), Validators.maxLength(20) ]),
         'numero': new FormControl(null, [ Validators.required, Validators.minLength(1), Validators.maxLength(20) ]),
@@ -32,6 +34,18 @@ export class OrdemCompraComponent implements OnInit {
             this.formulario.get('numero').markAsTouched();
             this.formulario.get('complemento').markAsTouched();
             this.formulario.get('formaPagamento').markAsTouched();
+        } else {
+            let pedido: Pedido = new Pedido(
+                this.formulario.value.endereco, 
+                this.formulario.value.numero, 
+                this.formulario.value.complemento, 
+                this.formulario.value.formaPagamento
+            );
+
+            this.ordemCompraService.efetivarCompra(pedido)
+                .subscribe((idPedido: number) => {
+                    this.idPedido = idPedido;
+                });
         }
     }
 }
