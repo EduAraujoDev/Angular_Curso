@@ -15,13 +15,14 @@ import { DiversaoComponent } from './diversao/diversao.component';
 import { OfertaComponent } from './oferta/oferta.component';
 import { ComoUsarComponent } from './oferta/como-usar/como-usar.component';
 import { OndeFicaComponent } from './oferta/onde-fica/onde-fica.component';
-
-import { DescricaoReduzida } from './util/descricao-reduzida.pipe'
-
-import { registerLocaleData } from "@angular/common";
-import localePt from "@angular/common/locales/pt";
 import { OrdemCompraComponent } from './ordem-compra/ordem-compra.component';
 import { OrdemCompraSucessoComponent } from './ordem-compra-sucesso/ordem-compra-sucesso.component';
+
+import { CarrinhoService } from './carrinho.service'; 
+
+import { DescricaoReduzida } from './util/descricao-reduzida.pipe'
+import { registerLocaleData } from "@angular/common";
+import localePt from "@angular/common/locales/pt";
 registerLocaleData(localePt);
 
 @NgModule({
@@ -48,7 +49,8 @@ registerLocaleData(localePt);
         RouterModule.forRoot(ROUTES)
     ],
     providers: [
-        { provide: LOCALE_ID, useValue: 'pt-Br' }
+        CarrinhoService,
+        { provide: LOCALE_ID, useValue: 'pt-Br', }
     ],
     bootstrap: [AppComponent]
 })
