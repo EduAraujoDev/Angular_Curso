@@ -11,7 +11,7 @@ import { OfertasService } from '../../ofertas.service';
 
 export class OndeFicaComponent implements OnInit {
 
-    private ondeFica = '';
+    public ondeFica: String = '';
 
     constructor(private route: ActivatedRoute, private ofertasService: OfertasService) { }
 
