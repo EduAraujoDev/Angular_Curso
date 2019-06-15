@@ -9,6 +9,8 @@ import { BannerComponent } from './Acesso/banner/banner.component';
 import { LoginComponent } from './Acesso/login/login.component';
 import { CadastroComponent } from './Acesso/cadastro/cadastro.component';
 
+import { Autenticacao } from './autenticacao.service';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -22,7 +24,7 @@ import { CadastroComponent } from './Acesso/cadastro/cadastro.component';
         BrowserAnimationsModule,
         ReactiveFormsModule
     ],
-    providers: [],
+    providers: [ Autenticacao ],
     bootstrap: [AppComponent]
 })
 
