@@ -13,6 +13,8 @@ import { LoginComponent } from './Acesso/login/login.component';
 import { CadastroComponent } from './Acesso/cadastro/cadastro.component';
 
 import { Autenticacao } from './autenticacao.service';
+import { AutenticacaoGuard  } from './autenticacao-guard.service'
+
 import { HomeComponent } from './home/home.component';
 import { PublicacoesComponent } from './home/publicacoes/publicacoes.component';
 import { from } from 'rxjs';
@@ -33,7 +35,7 @@ import { from } from 'rxjs';
         ReactiveFormsModule,
         RouterModule.forRoot(ROUTES)
     ],
-    providers: [ Autenticacao ],
+    providers: [ Autenticacao, AutenticacaoGuard ],
     bootstrap: [AppComponent]
 })
 
