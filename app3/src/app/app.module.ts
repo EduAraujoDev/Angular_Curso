@@ -10,6 +10,8 @@ import { LoginComponent } from './Acesso/login/login.component';
 import { CadastroComponent } from './Acesso/cadastro/cadastro.component';
 
 import { Autenticacao } from './autenticacao.service';
+import { HomeComponent } from './home/home.component';
+import { PublicacoesComponent } from './home/publicacoes/publicacoes.component';
 
 @NgModule({
     declarations: [
@@ -17,7 +19,9 @@ import { Autenticacao } from './autenticacao.service';
         AcessoComponent,
         BannerComponent,
         LoginComponent,
-        CadastroComponent
+        CadastroComponent,
+        HomeComponent,
+        PublicacoesComponent
     ],
     imports: [
         BrowserModule,
