@@ -1,4 +1,4 @@
-<div class="card" style="width: 20rem;">
+<div class="card" style="width: 20rem;" [@animacao-painel]="estadoPainel" (@animacao-painel.done)="fimDaAnimacao()">
     <div class="card-body">
         <div class="card-title"></div>
         <form [formGroup]="formulario" (ngSubmit)="cadastrarUsuario()">
