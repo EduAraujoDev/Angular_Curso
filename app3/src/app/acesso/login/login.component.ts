@@ -14,13 +14,15 @@ export class LoginComponent implements OnInit {
     @Output()
     public exibirPainel: EventEmitter<string> = new EventEmitter<string>();
 
+    public mensagemErro: string = ""
+
     public formulario: FormGroup = new FormGroup({
         'email': new FormControl(null),
         'senha': new FormControl(null)  
     })
 
     constructor(
-        private autentucacao: Autenticacao
+        private autenticacao: Autenticacao
     ) { }
 
     ngOnInit() {
@@ -31,6 +33,9 @@ export class LoginComponent implements OnInit {
     }
 
     public autenticar(): void {
-        this.autentucacao.autenticar(this.formulario.value.email, this.formulario.value.senha)
+        this.autenticacao.autenticar(this.formulario.value.email, this.formulario.value.senha)
+            .catch((error: Error) => {
+                this.mensagemErro = error.message
+            })
     }
 }
